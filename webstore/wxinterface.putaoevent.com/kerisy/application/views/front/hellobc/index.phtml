@@ -1,0 +1,186 @@
+<?php
+$signPackage = $this->signPackage;
+$baseScore = $this->baseScore;
+?>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0">
+		<link href="/css/app.c68e2f8066269d56a849.css" rel="stylesheet"></head>
+		<title>挑战脑力王</title>
+    </head>
+    <body>
+	<section class="container hide" id="tipPage">
+		<h2>请将手机竖起,以便更好的体验</h2>
+	</section>
+        <div class="game-container hide">
+            <div class="game-loading"></div>
+            <div class="game-info hide">
+                <span class="score-name">分数：</span>
+                <span class="score">0</span>
+                <span class="move-name">步数：</span>
+                <span class="move">0</span>
+                <span class="food-name">食物：</span>
+                <span class="food">0</span>
+            </div>
+            <div class="game-notice hide">
+                <div class="notice">
+<!--                    <span class="time"><i class=""></i>6/28 10:10:10</span>-->
+                    目标
+					<?= $baseScore->base_score;?>
+					分，挑战成为脑力王！
+                </div>
+                <div class="refresh"></div>
+            </div>
+            <canvas id="scene" class="hide"></canvas>
+            <div class="operate-container hide">
+                <div class="operate-able">
+                    <img class="move" src="/images/assets/images/operate/move.png">
+                    <img class="left" src="/images/assets/images/operate/left.png">
+                    <img class="right" src="/images/assets/images/operate/right.png">
+                </div>
+                <div class="operate-disable hide">
+                    <img class="move" src="/images/assets/images/operate/move_disable.png">
+                    <img class="left" src="/images/assets/images/operate/left_disable.png">
+                    <img class="right" src="/images/assets/images/operate/right_disable.png">
+                </div>
+            </div>
+        </div>
+        <div id="page">
+            <div class="start-btn">
+                <img class="start" id="start" src="/images/assets/images/start.png" />
+            </div>
+            <div class="row">
+                <div class="two-col">
+                    <img class="rank" id="rank" src="/images/assets/images/naoliwang.png" />
+                </div>
+                <div class="two-col">
+                    <img class="award-rules" id="rule" src="/images/assets/images/award_rules.png" />
+                </div>
+            </div>
+            <div class="mask hide" id="mask">
+            		<div class="rank hide" id="rank-container">
+            			<div class="banner">
+            				<img class="rank-banner" src="/images/assets/images/rank_banner.png" />
+            				<a id="close"></a>
+            			</div>
+            			<div class="rank-content">
+            				<div class="rank-tab">
+            					<div class="two-col active" id="thisweek">本周脑力王</div>
+            					<div class="two-col" id="lastweek">上周脑力王</div>
+            				</div>
+            				<div class="rank-panel hide" id="rank-panel">
+            					<div class="ichallenge">
+            						<img src="/images/assets/images/nochallenge.png" />
+            					</div>
+            					<div class="btn-area">
+            						<button class="btn" id="togo">我来挑战</button>
+            					</div>
+            				</div>
+            				<div class="rank-list hide" id="rank-list">
+            					<!--<div class="rank-own">
+	            					我的最高分: 1021，排名: 201
+	            				</div>-->
+	            				<!--<div class="items" id="items">
+	            					<div class="item">
+	            						<div class="left">4</div>
+	            						<div class="center">
+	            							<div class="icon"></div>
+	            							<div class="detail"></div>
+	            						</div>
+	            						<div class="right"></div>
+	            					</div>
+	            					<div class="item">
+	            						<div class="left"><img src="assets/images/first.png" /></div>
+	            						<div class="center">
+	            							<div class="icon"></div>
+	            							<div class="detail">
+	            								<div class="name">阿廖沙的bar...</div>	
+	            								<div class="time">2016-6-24  10:28:39</div>
+	            							</div>
+	            						</div>
+	            						<div class="right">5080</div>
+	            					</div>
+	            				</div>-->
+            				</div>
+            			</div>
+            		</div>
+            		<div id="share" class="hide">
+            			<img class="share" src="/images/assets/images/share.png">
+            		</div>
+            		<div id="award" class="hide">
+            			<img class="award" src="/images/assets/images/after_share.png">
+            			<a id="xclose"></a>
+            		</div>
+            		<div class="score hide" id="score">
+            			<a id="sclose"></a>
+            			<div id="content" class="content">
+            				<div class="row m-t" id="cbtn">
+            					<div class="left">
+            						<button id="playagain">再玩一次</button>
+            					</div>
+            					<div class="right">
+            						<button class="sm-font" id="toshare"></button>
+            					</div>
+            				</div>
+            			</div>
+            		</div>
+            		<div class="rules hide" id="rules">
+            			<a id="rclose"></a>
+            			<div class="irule">
+            				<img src="/images/assets/images/rules.png"/>
+            				<a href="//wx-store.putao.com/home"></a>
+            			</div>
+            		</div>
+            </div>
+        </div>
+	<script type="text/javascript" src="//res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+
+	<script type="text/javascript">
+//		window.wxData = {
+//			"appId": "",
+////        "imgUrl": "http://ldev.wxgame.putao.com/images/maisisi.png",
+//			"imgUrl": "http://wxgame.putao.com/images/maisisi.jpg",
+//			"link" : location.href,
+//			"desc": "我刚发现了一款好游戏，你要不要也来试试？",
+//			"title": '老爸、萌娃并肩大战“麦斯丝”，赢《海底总动员2》电影票！'
+//		};
+		window.wxConfig = {
+			"appId": '<?php echo $signPackage["appId"];?>',
+			"timestamp": '<?php echo $signPackage["timestamp"];?>',
+			"nonceStr": '<?php echo $signPackage["nonceStr"];?>',
+			"signature": '<?php echo $signPackage["signature"];?>'
+		};
+
+wx.config({
+	debug: false,
+	appId: wxConfig.appId,
+	timestamp: wxConfig.timestamp,
+	nonceStr: wxConfig.nonceStr,
+	signature: wxConfig.signature,
+	jsApiList: [
+		'onMenuShareTimeline',
+		'onMenuShareAppMessage',
+	]
+});
+	</script>
+
+<!--	<script type="text/javascript" src="/js/hellobcwx.js"></script>-->
+	</script>
+	<script type="text/javascript" src="/js/static/utils.min.js">
+	</script>
+	<script type="text/javascript" src="/js/config.js">
+	</script>
+	<script type="text/javascript" src="/js/app.c68e2f8066269d56a849.js">
+	</script>
+	<script>
+		var _hmt = _hmt || [];
+		(function() {
+			var hm = document.createElement("script");
+			hm.src = "//hm.baidu.com/hm.js?c4987607443aca72631e98d7e8c23042";
+			var s = document.getElementsByTagName("script")[0];
+			s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+	</body>
+</html>

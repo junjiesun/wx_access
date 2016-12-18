@@ -1,0 +1,20 @@
+{
+    "debugMode"     : 1,
+    "frameRate"     : 60,
+    "id"            : "gameCanvas",
+    "renderMode"    : 1,
+    "showFPS": false,
+    "modules" : ["cocos2d","chipmunk","external"],
+    "jsList"        : [
+        "/js/lgc/UnitSprite.js",
+        "/js/lgc/ButtonSprite.js",
+        "/js/lgc/CommonGame.js",
+        "/js/lgc/GameLayer.js",
+        "/js/lgc/HomeMenuLayer.js",
+        "/js/lgc/Resource.js",
+        "/js/lgc/CommonUtil.js",
+        "/js/lgc/GameConfig.js",
+        "/js/lgc/ComicLayer.js",
+        "/js/lgc/GameOverLayer.js"
+    ]
+}

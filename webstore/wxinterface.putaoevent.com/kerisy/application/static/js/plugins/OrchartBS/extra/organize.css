@@ -1,0 +1,30 @@
+.box_org_tree{height:400px;}
+.box_org_tree .org_td{vertical-align:top}
+.box_org_tree .org_line_bm{background:url(../img/m.png) no-repeat bottom center;-background-image:url(../img/ie6/m.gif)}
+.box_org_tree .org_line_tm{background:url(../img/m.png) no-repeat top center;-background-image:url(../img/ie6/m.gif)}
+.box_org_tree .org_line_lr{background:url(../img/lr.png) no-repeat top center;-background-image:url(../img/ie6/lr.gif)}
+.box_org_tree .org_line_l{background:url(../img/l.png) no-repeat top center;-background-image:url(../img/ie6/l.gif)}
+.box_org_tree .org_line_r{background:url(../img/r.png) no-repeat top center;-background-image:url(../img/ie6/r.gif)}
+.box_org_tree .org_table_col .org_node_c{margin:0}
+.box_org_tree .org_table_col .org_line_bm{background:url(../img/m.png) no-repeat 15px bottom;-background-image:url(../img/ie6/m.gif)}
+.box_org_tree .org_table_col .org_line_tm{background:url(../img/b.png) no-repeat 15px -660px;-background-image:url(../img/ie6/b.gif)}
+.box_org_tree .org_table_col .org_line_lr{background:url(../img/tb.png) no-repeat 15px -660px;-background-image:url(../img/ie6/tb.gif)}
+.box_org_tree .org_table_col .org_line_l{background:url(../img/b.png) no-repeat 15px -660px;-background-image:url(../img/ie6/b.gif)}
+.box_org_tree .org_table_col .org_line_r{background:url(../img/tb.png) no-repeat 15px -660px;-background-image:url(../img/ie6/tb.gif)}
+.box_org_tree .org_table_col .org_td_col{padding-left:15px;text-align:left}
+.clearfix:after{content:".";height:0;display:block;visibility:hidden;clear:both}
+.clearfix{zoom:1}
+.box_org_three{width:800px;overflow:hidden}
+.box_org_three .org_node_c{width:60px; height:60px;padding:10px;margin:0;border-radius:5px}
+.box_org_three .org_node_c .img_corg img{width:50px;height:50px;border:none}
+.box_org_three .org_node_c_inner{width:50px;height:50px;overflow:hidden;border:5px solid #eee;border-radius:5px}
+.org_table_col .org_line_bm{background:url(../img/m.png) no-repeat 39px bottom;-background-image:url(../img/ie6/m.gif)}
+.org_table_col .org_line_tm{background:url(../img/b.png) no-repeat 39px -660px;-background-image:url(../img/ie6/b.gif)}
+.org_table_col .org_line_lr{background:url(../img/tb.png) no-repeat 39px -660px;-background-image:url(../img/ie6/tb.gif)}
+.org_table_col .org_line_l{background:url(../img/b.png) no-repeat 39px -660px;-background-image:url(../img/ie6/b.gif)}
+.org_table_col .org_line_r{background:url(../img/tb.png) no-repeat 39px -660px;-background-image:url(../img/ie6/tb.gif)}
+.org_td_col{padding-left:39px}
+.org_td_col{padding-left:39px}
+                   .box *{box-sizing:initial !important;-webkit-box-sizing: initial !important;
+    -moz-box-sizing: initial !important;
+    box-sizing: initial !important;}

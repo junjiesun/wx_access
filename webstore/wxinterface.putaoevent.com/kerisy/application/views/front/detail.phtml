@@ -1,0 +1,43 @@
+<?php
+    $signPackage = $this->signPackage;
+?>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0">
+        <!--<link rel="stylesheet" type="text/css" href="detail.css">-->
+        <link rel="stylesheet" href="/css/detail.css">
+    </head>
+    <body>
+    <?php $openURL = $this->openURL?>
+    <?php $details = $this->details?>
+        <div class="logo">
+            <img src="<?= $details->icon?>">
+        </div>
+        <p class="name"><?= $details->name?></p>
+        <div class="operate">
+            <span href="<?= $openURL?>" id="open_btn" class="btn"></span>
+        </div>
+        <div class="content">
+            <?= $details->details?>
+        </div>
+        <script type="text/javascript" src="/js/detail.js"></script>
+        <script type="text/javascript" src="//res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+		<script type="text/javascript">
+			window.wxData = {
+		        "appId": "", // 服务号可以填写appId
+		        "imgUrl": "http://bomb.putao.com/images/smallcoffee.png",
+		        "link": "http://bomb.putao.com",
+		        "desc": "逗比fan逗比fan逗比fan逗比fan逗比fan逗比fan逗比fan逗比fan",
+		        "title": "逗比fan"
+		    };
+		    window.config = {
+		        "appId": '<?php echo $signPackage["appId"];?>',
+				"timestamp": '<?php echo $signPackage["timestamp"];?>',
+				"nonceStr": '<?php echo $signPackage["nonceStr"];?>',
+				"signature": '<?php echo $signPackage["signature"];?>'
+		    };
+		</script>
+		<script type="text/javascript" src="/js/wx.js"></script>
+    </body>
+</html>

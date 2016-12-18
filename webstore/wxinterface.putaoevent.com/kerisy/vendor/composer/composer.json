@@ -1,0 +1,5 @@
+{
+    "require": {
+        "latrell/alipay": "dev-master"
+    }
+}
