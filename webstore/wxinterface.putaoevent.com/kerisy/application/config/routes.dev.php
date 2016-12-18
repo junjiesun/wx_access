@@ -10,7 +10,6 @@ return [
 	[
 		'prefix' => 'Front',
 		'domain' => 'ldev.wxinterface.putaoevent.com',
-//		'domain' => 'wxinterface.ptdev.cn',
 		'routes' => [
 			['GET', '/', 'Core/Index/index'],                                           //授权跳转页面
 			['GET', 'getuser', 'Core/Index/getUser'],                                   //获取用户信息
@@ -22,7 +21,6 @@ return [
 	[
 		'prefix' => 'Admin',
 		'domain' => 'ldev.admin-wxinterface.putaoevent.com',
-//		'domain' => 'admin-wxinterface.ptdev.cn',
 		'routes' => [
 			['GET', '/', 'core/Index/index'],
 			['GET', 'signin', 'core/Index/signinPage'],                					//登录页面
